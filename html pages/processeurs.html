@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Addproduct tool®</title>
+    <link rel="shortcut icon" href="/processeurs.jpg" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <form id="regForm" method="post" enctype="multipart/form-data" action="generate_csv.php">
+                    <h1 id="register">
+                        <img src="work-in-progress.png" style="width: 60px;"> Processeurs Form 
+                    </h1>
+                    <div class="all-steps" id="all-steps"> 
+                            <span class="step"><i class="fa fa-user"></i></span> 
+                            <span class="step"><i class="fa fa-map-marker"></i></span>
+                            <span class="step"><i class="fa fa-shopping-bag"></i></span>
+                    </div>
+
+                    <!-- Étape 1 : Jeu d'attributs -->
+                    <div class="tab">
+                        <h1 id="step-title">Étape 1: Informations de base</h1>
+                        <h4>Catégorie :</h4>
+                        <p>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_2"
+                                name="category_ids[]"
+                                required
+                                value="HOOTA Promo"
+                            />
+                            HOOTA Promo
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_42"
+                                name="category_ids[]"
+                                value="Ordinateurs portables"
+                            />
+                            Ordinateurs portables
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_51"
+                                name="category_ids[]"
+                                value="Ordinateurs portables de jeu"
+                            />
+                            Ordinateurs portables de jeu
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_52"
+                                name="category_ids[]"
+                                value="Ordinateurs portables 2 en 1"
+                            />
+                            Ordinateurs portables 2 en 1
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_53"
+                                name="category_ids[]"
+                                value="Chromebook"
+                            />
+                            Chromebook
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_89"
+                                name="category_ids[]"
+                                value="Nouveautes"
+                            />
+                            Nouveautes
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_90"
+                                name="category_ids"
+                                value="Livraison gratuite"
+                            />
+                            Livraison gratuite
+                            </label>
+                            <label>
+                            <input
+                                type="checkbox"
+                                id="category_121"
+                                name="category_ids"
+                                value="Laptops"
+                            />
+                            Laptops
+                            </label>
+                        </p>
+                        <input type="hidden" name="category_indicator" value="Processeurs">
+                        <h4>Le nom du produit  :</h4>
+                        <p>
+                            <input value="" type="text"  name="name" oninput="this.className=''">
+                        </p>
+                        <h4>Poids (kgs):</h4>
+                        <p>
+                            <input value="" type="text"  oninput="this.className = ''" name="weight">
+                        </p>
+                        <h4>Le prix <b>(DH)</b>:</h4>    
+                        <p><input value="" placeholder="Prix article:" required type="text" oninput="this.className = ''" name="price">
+                        </p>
+                        <h4>Le prix spéciale:<b>(DH)</b>:</h4>
+                        <p>
+                            <input value="" placeholder="Entrer un prix spéciale pour vos clients: " type="text" oninput="this.className = ''" name="special_price">
+                        </p>
+                    </div>
+
+                    <!-- Étape 2 :  -->
+                    <div class="tab">
+                        <h1 id="step-title">
+                                Étape 2: Disponibilité,Frais de Livraison et Garantie
+                        </h1>
+                        <h4>Disponibilité:</h4>
+                        <p>
+                            <select name="is_in_stock" oninput="this.className = ''">
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="In Stock">En stock</option>
+                            <option value="Out of Stock">En rupture de stock</option>
+                            </select>
+                        </p>
+                        <h4>Stock:</h4>
+                        <p>
+                            <input
+                            value=""
+                            type="text"
+                            placeholder="Entrer la quantité disponible:"
+                            oninput="this.className = ''"
+                            name="stock"
+                            />
+                        </p>
+                        <h4>Grade du produit</h4>
+                        <p>
+                            <select
+                            name="grade_du_produit"
+                            required
+                            oninput="this.className = ''"
+                            >
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="Boite fermée">Boite fermée</option>
+                            <option value="Parfait état">Parfait état</option>
+                            <option value="Très bon état">Très bon état</option>
+                            <option value="État correct">État correct</option>
+                            </select>
+                        </p>
+                        <h4>Garantie du produit</h4>
+                        <p>
+                            <select
+                            name="garantie_en_mois"
+                            required
+                            oninput="this.className = ''"
+                            >
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="3 mois">3 mois</option>
+                            <option value="4 mois">4 mois</option>
+                            <option value="5 mois">5 mois</option>
+                            <option value="6 mois">6 mois</option>
+                            <option value="7 mois">7 mois</option>
+                            <option value="8 mois">8 mois</option>
+                            <option value="9 mois">9 mois</option>
+                            <option value="10 mois">10 mois</option>
+                            <option value="11 mois">11 mois</option>
+                            <option value="12 mois">12 mois</option>
+                            <option value="18 mois">18 mois</option>
+                            <option value="24 mois">24 mois</option>
+                            </select>
+                        </p>
+                        <h4>Durée de livraison:</h4>
+                        <p>
+                            <select
+                            name="durai_de_livraison_jours"
+                            required
+                            oninput="this.className = ''"
+                            >
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="Entre 1 et 4 jours">Entre 1 et 4 jours</option>
+                            <option value="Entre 4 et 6 jours">Entre 4 et 6 jours</option>
+                            <option value="Entre 6 et 9 jours">Entre 6 et 9 jours</option>
+                            <option value="Entre 9 et 12 jours">
+                                Entre 9 et 12 jours
+                            </option>
+                            <option value="Entre 12 et 15 jour">
+                                Entre 12 et 15 jours
+                            </option>
+                            </select>
+                        </p>
+                        <h4>Frais de livraison <b>(DH)</b>:</h4>
+                        <p>
+                            <input
+                            value=""
+                            type="text"
+                            name="shipping_cost"
+                            placeholder="Enter les frais de livraison"
+                            oninput="this.className=''"
+                            />
+                        </p>
+                    </div>
+                   <!-- Étape 3 :  -->
+                   <div class="tab">
+                        <h1 id="step-title">Informations detaillées sur le produit</h1>
+                        <h4>SKU:</h4>
+                        <p>
+                        <input
+                            value=""
+                            type="text"
+                            name="sku"
+                            oninput="this.className=''"
+                        />
+                        </p>
+                        <h4>Description:</h4>
+                        <p>
+                        <input
+                            value=""
+                            type="text"
+                            name="description"
+                            required
+                            placeholder="Entrer la description de votre ordinateur en détails :"
+                            oninput="this.className=''"
+                        />
+                        </p>
+                        <h4>Description courte :</h4>
+                        <p>
+                        <input
+                            value=""
+                            type="text"
+                            name="short_description"
+                            placeholder="Entrer une description courte de votre ordinateur :"
+                            oninput="this.className=''"
+                        />
+                        </p>
+                        <h4>Meta_description :</h4>
+                        <p>
+                        <input
+                            value=""
+                            placeholder="Copiez ici la description courte de votre ordinateur:"
+                            type="text"
+                            oninput="this.className = ''"
+                            name="meta_description"
+                        />
+                        </p>
+                        <h4>Meta_title</h4>
+                        <p>
+                        <input
+                            value=""
+                            type="text"
+                            placeholder="Copiez ici le titre votre ordinateur:"
+                            oninput="this.className = ''"
+                            name="meta_title"
+                        />
+                        </p>
+                        <h4>Meta_keyword</h4>
+                        <p>
+                        <input
+                            value=""
+                            type="text"
+                            placeholder="Entrez les points cles de votre orfinateur:"
+                            oninput="this.className = ''"
+                            name="meta_keyword"
+                        />
+                        </p>
+                        <h4>Joindez les images:</h4>
+                        <p>
+                        <input
+                            type="file"
+                            name="images[]"
+                            accept="image/*"
+                            multiple
+                            required
+                        />
+                        </p>
+                    </div>
+
+                    <!-- Boutons de navigation -->
+                    <div style="overflow:auto;" id="nextprevious">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-angle-double-left"></i> Précédent</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fa fa-angle-double-right"></i> Suivant</button>
+                            <!-- <button type="button" id="productListBtn" style="display:none;" onclick="showProductList()">Liste des Produits</button> -->
+                            <button type="button" id="addProductBtn" style="display:none;" onclick="addProduct()">Ajouter le Produit</button>
+                            <button type="button" id="generateBtn" style="display:none;" onclick="generateCSV()"><i class="fa fa-check"></i> Générer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Fonction pour mettre à jour les données lorsque les cases à cocher sont cochées ou décochées
+        function updateCSVData() {
+            var selectedCategories = [];
+    
+            // Parcourez toutes les cases à cocher de la catégorie et ajoutez les valeurs sélectionnées à la liste
+            var checkboxes = document.querySelectorAll('input[name="category_ids[]"]');
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    selectedCategories.push(checkbox.value);
+                }
+            });
+    
+            // Mettez à jour les données du formulaire avec les catégories sélectionnées
+            document.querySelector('input[name="category_ids[]"]').value = selectedCategories.join(', ');
+        }
+    
+        // Écoutez les changements de coche sur les cases à cocher de la catégorie
+        var checkboxes = document.querySelectorAll('input[name="category_ids[]"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                updateCSVData();
+            });
+        });
+    </script>
+    
+    <script src="script_page3.js"></script>
+</body>
+</html>

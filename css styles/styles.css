@@ -1,0 +1,167 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(158, 241, 221);
+  display:inline;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0rem;
+  background-color: rgb(158, 241, 221);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  color: #6A1B9A;
+}
+input,
+select {
+    padding: 4px;
+    width: 100%;
+    font-size: 17px;
+    border: 1px solid #aaaaaa;
+    border-radius: 0px;
+    transition: border-color 0.3s;
+}
+input:focus,
+select:focus {
+    border-color: #6A1B9A;
+    outline: none;
+}
+.invalid {
+  border: 1px solid #e03a0666;
+}
+.tab {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+
+button {
+  background-color: #6A1B9A;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+button:hover {
+  background-color: #542d7d;
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+}
+
+#regForm {
+  background-color:rgb(158, 241, 221);
+  margin:auto;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.animated-title {
+  text-align:end;
+  opacity: 50%;
+  transform: translateY(+20px);
+  animation: fadeInDown 1.5s ease-in-out forwards; 
+
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.checklist {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checklist li {
+  margin-bottom: 10px;
+}
+
+.next-button,
+.action-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.next-button {
+  margin-top: 20px;
+}
+
+.action-button {
+  margin-top: 10px;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.all-steps {
+  text-align: center;
+  margin: 30px 0;
+}
+.step {
+  height: 40px;
+  width: 40px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #6a1b9a;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  color: #fff;
+  background: #6a1b9a;
+  opacity: 1;
+}
+
+ 

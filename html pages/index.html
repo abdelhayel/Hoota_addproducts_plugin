@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOOTA DASHBOARD</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;   
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    padding: 325px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(226, 211, 99, 0.1);
+    width: 100%;
+    max-width: 1700px;
+    box-sizing: content-box;
+}
+
+.animated-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 100px;
+    animation: fadeInUp 1s ease;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 25px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background: linear-gradient(90deg, #FFD700, #FFD700 50%, #000 50%, #000);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-position: left bottom;
+    color: #FFF; /* Changez la couleur du texte lors du survol si nécessaire */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+</style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="./hoota.ma.mp4" type="video/mp4">
+    </video>
+    
+<div class="container">
+    <h1 class="animated-title">We're your key to grow !</h1>
+    <div class="button-container">
+      <form action="page2_traitement.php" method="post">
+        <button type="submit" name="downloadFiles" class="action-button">Download Existing File</button>
+        <button type="submit" class="action-button" name="deleteFiles" onclick="return confirmDelete()">Delete Existing File</button>
+      </form>
+      <button class="action-button" onclick="addProducts()">Add Products</button>
+    </div>
+  </div>   
+  <script>
+    function confirmDelete() {
+        return confirm("Êtes-vous sûr de vouloir supprimer les fichiers existants ?");
+    }
+  </script>
+  <script>
+    function addProducts() {
+      window.location.href = 'add_products.html';
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var video = document.getElementById("background-video");
+    var videoDuration = 90; // Durée de la vidéo en secondes (1:30 minutes)
+
+    // Mettez à jour la durée de la vidéo et les autres éléments de votre contenu
+    video.onloadedmetadata = function() {
+        videoDuration = video.duration;
+        // Mettez à jour le reste de votre contenu ici en fonction de la durée de la vidéo
+    };
+});
+
+  </script>
+</body>
+</html>
